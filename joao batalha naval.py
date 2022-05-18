@@ -1,6 +1,6 @@
 from random import randint
 
-print "vamos jogar batalha naval"
+print("vamos jogar batalha naval")
 
 jogo = True
 
@@ -18,19 +18,19 @@ navio_coluna = randint(4,colunas-1)
 
 def mostra_tabuleiro(t):
     for L in t:
-        print " ".join(L)
+        print(" ".join(L))
         
 while jogo:
     mostra_tabuleiro(tabuleiro)
-    chute_linha = input("qual linha?")-1
-    chute_coluna = input("qual coluna?")-1
+    chute_linha = int(input("qual linha?"))-1
+    chute_coluna = int(input("qual coluna?"))-1
 
     if chute_linha == navio_linha and chute_coluna == navio_coluna:
-        print "Parabéns! Você acertou!!"
+        print("ParabÃ©ns! VocÃª acertou!!")
         jogo = False
     elif chute_linha >= linhas or chute_coluna >= colunas:
-        print "Você chutou fora do tabuleiro"
+        print("VocÃª chutou fora do tabuleiro")
     elif tabuleiro[chute_linha][chute_coluna] == "x":
-        print "você já chutou aí"
+        print("vocÃª jÃ¡ chutou aÃ­")
     else:
         tabuleiro[chute_linha][chute_coluna] = "x"
